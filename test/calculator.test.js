@@ -2,11 +2,11 @@ import test from 'ava';
 
 import { Map } from 'immutable';
 
-import characterReducer, {
+import {
   INITIAL_STATE as CHAR_INITIAL_STATE,
 } from '../src/reducers/character';
 
-import cardsReducer, {
+import {
   INITIAL_STATE as CARDS_INITIAL_STATE,
 } from '../src/reducers/cards';
 
@@ -15,8 +15,6 @@ import calculatorReducer, {
 } from '../src/reducers/calculator';
 
 import { CALCULATE } from '../src/constants/calculator';
-
-import { addCard } from '../src/actions/cards';
 
 import baseXpData from '../src/data/base-xp.json';
 import classXpData from '../src/data/class-xp.json';
@@ -42,8 +40,7 @@ test('At first, you have no XP points', t => {
 
 test('Gain XP for each card you have', t => {
   for (let i = 0; i < 12; i++) {
-    const cards = cardsReducer(INITIAL_STATE.cards, addCard(i));
-    const state = INITIAL_STATE.merge({ cards });
+    const state = INITIAL_STATE.setIn(['cards', i], 1);
     const character = calculatorReducer(state, { type: CALCULATE }).get('character');
 
     t.is(
