@@ -71,6 +71,8 @@ function calculateXp(state) {
       classXp,
       accumulatedBaseXp,
       accumulatedClassXp,
+      reqBaseXp,
+      reqClassXp,
     },
   });
 }

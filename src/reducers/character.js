@@ -9,6 +9,8 @@ export const INITIAL_STATE = fromJS({
   classXp: 0,
   accumulatedBaseXp: 0,
   accumulatedClassXp: 0,
+  reqBaseXp: 0,
+  reqClassXp: 0,
   initial: {
     rank: 1,
     baseLevel: 1,
