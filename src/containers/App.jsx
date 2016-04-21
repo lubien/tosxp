@@ -1,18 +1,24 @@
 import React from 'react';
-import Navbar from './Navbar';
+
+import Navbar from '../components/Navbar';
 import Content from './Content';
-import Footer from './Footer';
 
 import 'flexboxgrid';
+import '../styles/main.sass';
+
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-export default function App() {
-  return (
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+const App = () => (
+  <MuiThemeProvider muiTheme={getMuiTheme()}>
     <section>
       <Navbar />
       <Content />
-      <Footer />
     </section>
-  );
-}
+  </MuiThemeProvider>
+);
+
+export default App;
