@@ -27,11 +27,13 @@ function calculateXp(state) {
 
   // Accumulate XP from cards
   cards.forEach((quantity, i) => {
-    accumulatedBaseXp += cardsXpData[i].base * quantity;
-    baseXp += accumulatedBaseXp;
+    const addBaseXp = cardsXpData[i].base * quantity;
+    accumulatedBaseXp += addBaseXp;
+    baseXp += addBaseXp;
 
-    accumulatedClassXp += cardsXpData[i].class * quantity;
-    classXp += accumulatedClassXp;
+    const addClassXp = cardsXpData[i].class * quantity;
+    accumulatedClassXp += addClassXp;
+    classXp += addClassXp;
   });
 
 
