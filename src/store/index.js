@@ -7,11 +7,12 @@ import devtools from 'remote-redux-devtools';
 
 import character from '../reducers/character';
 import cards from '../reducers/cards';
+import sidebar from '../reducers/sidebar';
 import calculator from '../reducers/calculator';
 
 const store = createStore(
   reduceReducers(
-    combineReducers({ character, cards }),
+    combineReducers({ character, cards, sidebar }),
     calculator
   ), new Map({}), compose(
     devtools()
