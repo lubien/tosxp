@@ -82,7 +82,8 @@ export default function (state = INITIAL_STATE, action) {
     case CALCULATE:
     case ADD_CARD:
     case REMOVE_CARD:
-    case CHANGE_INITIAL_VALUE: {
+    case CHANGE_INITIAL_VALUE:
+    case '@@INIT': {
       return calculateXp(state);
     }
     default: {
