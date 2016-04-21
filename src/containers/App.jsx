@@ -6,9 +6,6 @@ import Content from './Content';
 import 'flexboxgrid';
 import '../styles/main.sass';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
