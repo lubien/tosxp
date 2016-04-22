@@ -10,4 +10,4 @@ const server = new WebpackDevServer(compiler, {
   hot: true,
 });
 
-server.listen(3000, 'localhost');
+server.listen(3000, '0.0.0.0');
