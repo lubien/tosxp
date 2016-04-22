@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node server.js",
     "build": "cross-env NODE_ENV=production node webpack.prod.config.js",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist",
     "get-xp": "babel-node scripts/get-exp.js",
     "get-cards": "babel-node scripts/get-cards.js",
     "update-data": "npm run get-cards & npm run get-xp",
