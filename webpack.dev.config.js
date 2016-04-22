@@ -5,13 +5,13 @@ const dist = 'dist/';
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000/',
+    'webpack-dev-server/client?http://127.0.0.1:3000/',
     'webpack/hot/only-dev-server',
     './src/index',
   ],
   output: {
     path: path.join(__dirname, dist),
-    publicPath: 'http://0.0.0.0:3000/',
+    publicPath: 'http://127.0.0.1:3000/',
     contentBase: dist,
     filename: 'bundle.js',
   },

@@ -12,7 +12,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
 const Navbar = ({ actions }) => (
   <AppBar
-    title="ToS XP Cards Calculator"
+    title="ToS XP Cards AsCalculator"
 
     onLeftIconButtonTouchTap={actions.toggleSidebar}
     iconElementRight={
