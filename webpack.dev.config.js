@@ -48,9 +48,4 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
   ],
-  sassLoader: {
-    includePaths: [
-      path.resolve('./node_modules/bulma/'),
-    ],
-  },
 };

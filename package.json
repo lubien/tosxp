@@ -4,7 +4,8 @@
   "description": "Tree of Savior XP calculator",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "cross-env NODE_ENV=development node server.js",
+    "build": "cross-env NODE_ENV=production node webpack.prod.config.js",
     "get-xp": "babel-node scripts/get-exp.js",
     "get-cards": "babel-node scripts/get-cards.js",
     "update-data": "npm run get-cards & npm run get-xp",
@@ -37,6 +38,7 @@
     "babel-register": "^6.7.2",
     "cheerio": "^0.20.0",
     "co": "^4.6.0",
+    "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "es6-promise": "^3.1.2",
     "eslint": "^2.7.0",
