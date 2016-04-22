@@ -20,7 +20,7 @@ Go to the [webapp](http://lubien.github.io/tosxp/) and put how much cards, level
 * [x] Get started with Redux flux implementation
 * [x] Get started with webpack
 * [x] Dive into Ava
-* [_] Explore tools like Travis and Code Climate
+* [ ] Explore tools like Travis and Code Climate
 * [x] Have fun
 
 ## Develop
