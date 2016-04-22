@@ -18,6 +18,7 @@ Go to the [webapp](http://lubien.github.io/tosxp/) and put how much cards, level
 * [x] Dive more into React
 * [x] Explore ES2015
 * [x] Get started with Redux flux implementation
+* [X] Get started with Immutablejs
 * [x] Get started with webpack
 * [x] Dive into Ava
 * [ ] Explore tools like Travis and Code Climate
