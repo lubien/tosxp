@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as sidebarActionCreators from '../actions/sidebar';
 
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -7,10 +10,11 @@ import MenuItem from 'material-ui/MenuItem';
 
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
-const Navbar = () => (
+const Navbar = ({ actions }) => (
   <AppBar
     title="ToS XP Cards Calculator"
-    iconElementLeft={<div></div>}
+
+    onLeftIconButtonTouchTap={actions.toggleSidebar}
     iconElementRight={
       <IconMenu
         iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
@@ -23,4 +27,11 @@ const Navbar = () => (
   />
 );
 
-export default Navbar;
+Navbar.propTypes = {
+  actions: PropTypes.object.isRequired,
+};
+
+export default connect(
+  undefined,
+  dispatch => ({ actions: bindActionCreators(sidebarActionCreators, dispatch) })
+)(Navbar);
