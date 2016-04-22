@@ -12,7 +12,8 @@
     "update-data": "npm run get-cards & npm run get-xp",
     "lint": "eslint ./",
     "test": "nyc ava",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "code-climate": "cross-env CODECLIMATE_REPO_TOKEN=0e2a869818f4c0d12b3d5d0cdfbfa2b01ad0d88dd6a14b6e187fc148d6300db3 nyc report --reporter=text-lcov | codeclimate-test-reporter"
   },
   "ava": {
     "files": [
@@ -40,6 +41,7 @@
     "babel-register": "^6.7.2",
     "cheerio": "^0.20.0",
     "co": "^4.6.0",
+    "codeclimate-test-reporter": "^0.3.1",
     "coveralls": "^2.11.9",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
