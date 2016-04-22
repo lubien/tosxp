@@ -7,7 +7,7 @@ import Subheader from 'material-ui/Subheader';
 import CardsCounter from '../elements/CardsCounter';
 
 const CardsConfig = ({ cards, actions }) => (
-  <List>
+  <List className="cardsList">
     <Subheader>EXP Cards</Subheader>
     {cards.map((count, cardLevel) => (
       <CardsCounter

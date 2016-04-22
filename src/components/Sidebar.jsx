@@ -6,7 +6,7 @@ import Drawer from 'material-ui/Drawer';
 import CharacterConfig from './CharacterConfig';
 import CardsConfig from './CardsConfig';
 
-const dockedMinWidth = 980;
+import { DOCKED_MIN_WIDTH } from '../reducers/sidebar';
 
 const Sidebar = ({ cards, character, characterActions, cardsActions, open, sidebarActions }) => {
   const style = {
@@ -15,7 +15,7 @@ const Sidebar = ({ cards, character, characterActions, cardsActions, open, sideb
   };
   let docked = true;
 
-  if (window.innerWidth < dockedMinWidth) {
+  if (window.innerWidth < DOCKED_MIN_WIDTH) {
     docked = false;
     style.marginTop = 0;
   }
