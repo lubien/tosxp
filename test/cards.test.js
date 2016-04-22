@@ -41,7 +41,7 @@ test('Cards can be removed within 0-11 indexes', t => {
   }
 });
 
-test("Can't remove a card to a index other than 0-11.", t => {
+test("Can't remove a card from a index other than 0-11.", t => {
   t.deepEqual(
     cardsReducer(undefined, removeCard(15)),
     INITIAL_STATE
