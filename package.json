@@ -6,9 +6,10 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node server.js",
     "build": "cross-env NODE_ENV=production node webpack.prod.config.js",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && npm run bundle-version && gh-pages -d dist",
     "get-xp": "babel-node scripts/get-exp.js",
     "get-cards": "babel-node scripts/get-cards.js",
+    "bundle-version": "babel-node scripts/bundle-version.js",
     "update-data": "npm run get-cards & npm run get-xp",
     "lint": "eslint ./",
     "test": "nyc ava",
