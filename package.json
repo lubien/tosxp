@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node server.js",
     "build": "cross-env NODE_ENV=production node webpack.prod.config.js",
+    "deploy": "gh-pages -d dist",
     "get-xp": "babel-node scripts/get-exp.js",
     "get-cards": "babel-node scripts/get-cards.js",
     "update-data": "npm run get-cards & npm run get-xp",
@@ -45,6 +46,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
     "eslint-plugin-react": "^4.3.0",
+    "gh-pages": "^0.11.0",
     "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
