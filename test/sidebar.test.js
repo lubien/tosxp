@@ -9,3 +9,10 @@ test('When you toggle the siebar, you invert the state', t => {
     !INITIAL_STATE
   );
 });
+
+test('No unknown action will change the state', t => {
+  t.is(
+    sidebarReducer(INITIAL_STATE, { type: 'foo' }),
+    INITIAL_STATE
+  );
+});
