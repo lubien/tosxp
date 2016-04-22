@@ -25,7 +25,10 @@ const Content = ({
       open={sidebarOpen}
       sidebarActions={sidebarActions}
     />
-    <div className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4" style={containerStyle}>
+    <div
+     className="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4"
+     style={containerStyle}
+    >
       <ResultsArea character={character} />
     </div>
   </div>
