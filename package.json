@@ -1,12 +1,14 @@
 {
   "name": "tosxp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tree of Savior XP calculator",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development node server.js",
-    "build": "cross-env NODE_ENV=production node webpack.prod.config.js",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.prod.config.js",
     "deploy": "npm run build && npm run bundle-version && gh-pages -d dist",
+    "preversion": "npm test",
+    "version": "git add -A",
     "postversion": "npm run deploy",
     "get-xp": "babel-node scripts/get-exp.js",
     "get-cards": "babel-node scripts/get-cards.js",
