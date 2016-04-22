@@ -1,3 +1,4 @@
 src/data/*
 **/*.sass
 node_modules/*
+dist/*
