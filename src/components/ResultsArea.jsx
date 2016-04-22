@@ -10,7 +10,6 @@ import { List, ListItem } from 'material-ui/List';
 import Paper from 'material-ui/Paper';
 import { grey400, cyan700 } from 'material-ui/styles/colors';
 import SocialPerson from 'material-ui/svg-icons/social/person';
-import SocialWhatsHot from 'material-ui/svg-icons/social/whatshot';
 
 const paperStyle = {
   padding: 15,
@@ -53,24 +52,23 @@ const ResultsArea = ({ character }) => (
       <ListItem
         primaryText="Class XP"
         secondaryText={`Accumulated ${prettyNumber(character.get('accumulatedClassXp'))}`}
-        leftIcon={<SocialWhatsHot />}
+        leftAvatar={
+          <Avatar
+            style={rankAvatarStyle}
+            backgroundColor={cyan700}
+            size={36}
+          >
+            R{character.get('rank')}
+          </Avatar>
+        }
         rightAvatar={
-          <div>
-            <Avatar
-              style={rankAvatarStyle}
-              backgroundColor={cyan700}
-              size={36}
-            >
-              R{character.get('rank')}
-            </Avatar>
-            <Avatar
-              style={avatarStyle}
-              backgroundColor={grey400}
-              size={36}
-            >
-              {character.get('classLevel')}
-            </Avatar>
-          </div>
+          <Avatar
+            style={avatarStyle}
+            backgroundColor={grey400}
+            size={36}
+          >
+            {character.get('classLevel')}
+          </Avatar>
         }
       />
       <LinearProgress
