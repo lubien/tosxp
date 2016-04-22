@@ -29,7 +29,7 @@
     "email": "lubien1996@gmail.com",
     "url": "lubien.info"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "ava": "^0.14.0",
     "babel-cli": "^6.7.5",
