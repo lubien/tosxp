@@ -11,7 +11,8 @@
     "get-cards": "babel-node scripts/get-cards.js",
     "update-data": "npm run get-cards & npm run get-xp",
     "lint": "eslint ./",
-    "test": "ava"
+    "test": "nyc ava",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "ava": {
     "files": [
@@ -39,6 +40,7 @@
     "babel-register": "^6.7.2",
     "cheerio": "^0.20.0",
     "co": "^4.6.0",
+    "coveralls": "^2.11.9",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "es6-promise": "^3.1.2",
@@ -50,6 +52,7 @@
     "isomorphic-fetch": "^2.2.1",
     "json-loader": "^0.5.4",
     "node-sass": "^3.4.2",
+    "nyc": "^6.4.0",
     "react-hot-loader": "^1.3.0",
     "reduce-reducers": "^0.1.2",
     "redux-immutable": "^3.0.6",
