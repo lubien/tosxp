@@ -21,7 +21,7 @@ Go to the [webapp](http://lubien.github.io/tosxp/) and put how much cards, level
 * [X] Get started with Immutablejs
 * [x] Get started with webpack
 * [x] Dive into Ava
-* [ ] Explore tools like Travis and Code Climate
+* [X] Explore tools like Travis, Coveralls, Code Climate and bitHound
 * [x] Have fun
 
 ## Develop
