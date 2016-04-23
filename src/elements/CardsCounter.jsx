@@ -36,7 +36,7 @@ const CardsCounter = ({ level, quantity, removeHandler, addHandler }) => (
       {quantity}
     </Avatar>
 
-    <strong style={{ fontSize: 14 }}>Lv{level + 1} Card</strong>
+    <strong style={{ fontSize: 12 }}>Lv{level + 1} Card</strong>
 
     <div style={buttonsStyle}>
       <HoldableButton onClick={removeHandler} onHold={removeHandler} interval={100}>
