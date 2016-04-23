@@ -22,6 +22,15 @@ export default function (state = INITIAL_STATE, action) {
 
       return state;
     }
+    case 'SET_AMOUNT': {
+      const { level, amount } = action;
+
+      if (level >= 0 && level <= 11) {
+        return state.set(level, amount);
+      }
+
+      return state;
+    }
     default: {
       return state;
     }

@@ -6,9 +6,15 @@ import Subheader from 'material-ui/Subheader';
 
 import CardsCounter from '../elements/CardsCounter';
 
+import miniSubheader from '../styles/miniSubheader'; 
+
 const CardsConfig = ({ cards, actions }) => (
   <List className="cardsList">
     <Subheader>EXP Cards</Subheader>
+    <Subheader style={miniSubheader}>
+      You can <b>click and hold</b> the add and minus buttons or
+      <b> directly write</b> the number of cards at left.
+    </Subheader>
     {cards.map((count, cardLevel) => (
       <CardsCounter
         key={`card-counter-${cardLevel}`}
@@ -16,6 +22,7 @@ const CardsConfig = ({ cards, actions }) => (
         quantity={count}
         removeHandler={() => actions.removeCard(cardLevel)}
         addHandler={() => actions.addCard(cardLevel)}
+        setHandler={(amount) => actions.setAmount(cardLevel, amount)}
       />
     ))}
   </List>

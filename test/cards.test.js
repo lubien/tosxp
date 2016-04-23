@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import cardsReducer, { INITIAL_STATE } from '../src/reducers/cards';
-import { addCard, removeCard } from '../src/actions/cards';
+import { addCard, removeCard, setAmount } from '../src/actions/cards';
 
 test('Initialize cardsReducer', t => {
   t.deepEqual(
@@ -51,6 +51,22 @@ test("Can't remove a card from a index other than 0-11.", t => {
 test("Can't remove cards you don't have", t => {
   t.deepEqual(
     cardsReducer(undefined, removeCard(0)),
+    INITIAL_STATE
+  );
+});
+
+/* ----------  setAmount()  ---------- */
+
+test('Can set a value within 0-11 indexes', t => {
+  t.deepEqual(
+     cardsReducer(undefined, setAmount(0, 100)),
+     INITIAL_STATE.set(0, 100)
+  );
+});
+
+test('Cant set a value from a index other than 0-11.', t => {
+  t.deepEqual(
+    cardsReducer(undefined, setAmount(15, 100)),
     INITIAL_STATE
   );
 });

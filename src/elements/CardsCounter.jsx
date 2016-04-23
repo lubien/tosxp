@@ -7,6 +7,7 @@ import AddIcon from 'material-ui/svg-icons/content/add-circle';
 import RemoveIcon from 'material-ui/svg-icons/content/remove-circle';
 
 import HoldableButton from './HoldableButton';
+import CardCounterInput from './CardCounterInput';
 
 const style = {
   paddingLeft: 16,
@@ -26,14 +27,14 @@ const buttonsStyle = {
   top: -6,
 };
 
-const CardsCounter = ({ level, quantity, removeHandler, addHandler }) => (
+const CardsCounter = ({ level, quantity, removeHandler, addHandler, setHandler }) => (
   <div style={style}>
     <Avatar
       backgroundColor={grey400}
       size={36}
       style={avatarStyle}
     >
-      {quantity}
+      <CardCounterInput value={quantity} onChange={setHandler} />
     </Avatar>
 
     <strong style={{ fontSize: 12 }}>Lv{level + 1} Card</strong>
@@ -55,6 +56,7 @@ CardsCounter.propTypes = {
   quantity: PropTypes.number.isRequired,
   removeHandler: PropTypes.func.isRequired,
   addHandler: PropTypes.func.isRequired,
+  setHandler: PropTypes.func.isRequired,
 };
 
 export default CardsCounter;

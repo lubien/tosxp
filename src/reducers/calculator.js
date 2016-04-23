@@ -1,7 +1,7 @@
 import { Map } from 'immutable';
 import { CALCULATE } from '../constants/calculator';
 import { CHANGE_INITIAL_VALUE } from '../constants/character';
-import { ADD_CARD, REMOVE_CARD } from '../constants/cards';
+import { ADD_CARD, REMOVE_CARD, SET_AMOUNT } from '../constants/cards';
 
 import baseXpData from '../data/base-xp.json';
 import classXpData from '../data/class-xp.json';
@@ -82,6 +82,7 @@ export default function (state = INITIAL_STATE, action) {
     case CALCULATE:
     case ADD_CARD:
     case REMOVE_CARD:
+    case SET_AMOUNT:
     case CHANGE_INITIAL_VALUE:
     case '@@INIT': {
       return calculateXp(state);
