@@ -8,7 +8,7 @@ import LinearProgress from 'material-ui/LinearProgress';
 import { List, ListItem } from 'material-ui/List';
 
 import Paper from 'material-ui/Paper';
-import { grey400, cyan700 } from 'material-ui/styles/colors';
+import { grey400, grey600, cyan700 } from 'material-ui/styles/colors';
 import SocialPerson from 'material-ui/svg-icons/social/person';
 
 const paperStyle = {
@@ -24,12 +24,19 @@ const rankAvatarStyle = {
   marginRight: 12,
 };
 
+const xpNumbersStyle = {
+  color: grey600,
+  fontSize: 14,
+  padding: '5px 0 10px',
+  textAlign: 'center',
+};
+
 const ResultsArea = ({ character }) => (
   <Paper style={paperStyle} zDepth={4}>
     <List>
       <ListItem
         primaryText="Base XP"
-        secondaryText={`Accumulated ${prettyNumber(character.get('accumulatedBaseXp'))}`}
+        secondaryText={`Total ${prettyNumber(character.get('accumulatedBaseXp'))}`}
         leftIcon={<SocialPerson />}
         rightAvatar={
           <Avatar
@@ -41,6 +48,12 @@ const ResultsArea = ({ character }) => (
           </Avatar>
         }
       />
+
+      <div style={xpNumbersStyle}>
+        {prettyNumber(character.get('baseXp'))}
+        <b> / {prettyNumber(character.get('reqBaseXp') || '-')}</b>
+      </div>
+
       <LinearProgress
         mode="determinate"
         value={character.get('baseXp')}
@@ -51,7 +64,7 @@ const ResultsArea = ({ character }) => (
 
       <ListItem
         primaryText="Class XP"
-        secondaryText={`Accumulated ${prettyNumber(character.get('accumulatedClassXp'))}`}
+        secondaryText={`Total ${prettyNumber(character.get('accumulatedClassXp'))}`}
         leftAvatar={
           <Avatar
             style={rankAvatarStyle}
@@ -71,6 +84,12 @@ const ResultsArea = ({ character }) => (
           </Avatar>
         }
       />
+
+      <div style={xpNumbersStyle}>
+        {prettyNumber(character.get('classXp'))}
+        <b> / {prettyNumber(character.get('reqClassXp') || '-')}</b>
+      </div>
+
       <LinearProgress
         mode="determinate"
         value={character.get('classXp')}
