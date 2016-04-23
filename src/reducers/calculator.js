@@ -13,6 +13,8 @@ export const INITIAL_STATE = new Map({});
 export const MAX_BASE_LEVEL = baseXpData.length;
 export const MAX_RANK = classXpData.length;
 
+import { percRegex } from '../utils/index';
+
 function calculateXp(state) {
   const initial = state.getIn(['character', 'initial']);
   const cards = state.get('cards');
@@ -24,6 +26,17 @@ function calculateXp(state) {
   let classXp = initial.get('classXp');
   let accumulatedBaseXp = 0;
   let accumulatedClassXp = 0;
+
+  // If our baseXp and/or classXp contains "%",
+  // we have to convert it into number.
+  if (/%/.test(baseXp)) {
+    const perc = baseXp.match(percRegex)[1];
+    baseXp = Math.floor(baseXpData[baseLevel] * perc / 100);
+  }
+  if (/%/.test(classXp)) {
+    const perc = classXp.match(percRegex)[1];
+    classXp = Math.floor(classXpData[rank - 1][classLevel] * perc / 100);
+  }
 
   // Accumulate XP from cards
   cards.forEach((quantity, i) => {

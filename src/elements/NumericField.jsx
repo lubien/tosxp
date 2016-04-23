@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 
 import TextField from 'material-ui/TextField';
 
+import { percRegex } from '../utils/index';
+
 class NumericField extends Component {
   constructor(props) {
     super(props);
@@ -19,14 +21,22 @@ class NumericField extends Component {
     const value = e.target.value;
     let error = false;
 
-    if (isNaN(value)) {
-      error = 'You didn\'t type a number.';
-    } else if (value < 0) {
-      error = 'Cannot be negative.';
-    } else if (this.props.max && value > this.props.max) {
-      error = `Maximum is ${this.props.max}.`;
+    if (this.props.acceptPercentual && /%/.test(value)) {
+      if (!percRegex.test(value)) {
+        error = 'Pattern is N%. N has 1-2 digits.';
+      } else {
+        this.props.handleChange(value);
+      }
     } else {
-      this.props.handleChange(Number(value));
+      if (isNaN(value)) {
+        error = 'You didn\'t type a number.';
+      } else if (value < 0) {
+        error = 'Cannot be negative.';
+      } else if (this.props.max && value > this.props.max) {
+        error = `Maximum is ${this.props.max}.`;
+      } else {
+        this.props.handleChange(Number(value));
+      }
     }
 
     this.setState({
@@ -55,6 +65,11 @@ NumericField.propTypes = {
   value: PropTypes.any.isRequired,
   handleChange: PropTypes.func.isRequired,
   max: PropTypes.number,
+  acceptPercentual: PropTypes.bool,
+};
+
+NumericField.defaultProps = {
+  acceptPercentual: false,
 };
 
 export default NumericField;

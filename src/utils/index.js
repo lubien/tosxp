@@ -15,3 +15,5 @@ export function prettyNumber(n) {
 
   return result.join(',');
 }
+
+export const percRegex = /^([0-9]{1,2})%$/;

@@ -32,14 +32,16 @@ const CharacterConfig = ({ character, actions }) => (
     />
 
     <NumericField
-      label="Initial Base EXP"
+      label="Initial Base EXP (Value or %)"
       value={character.getIn(['initial', 'baseXp'])}
       handleChange={(value) => actions.changeInitialValue('baseXp', value)}
+      acceptPercentual
     />
     <NumericField
-      label="Initial Class EXP"
+      label="Initial Class EXP (Value or %)"
       value={character.getIn(['initial', 'classXp'])}
       handleChange={(value) => actions.changeInitialValue('classXp', value)}
+      acceptPercentual
     />
   </List>
 );

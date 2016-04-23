@@ -95,3 +95,15 @@ test("Can't overflow max base level and max rank", t => {
   t.is(character.get('classLevel'), 15);
   t.is(character.get('rank'), MAX_RANK);
 });
+
+test('You can use % as initial baseXp and classXp', t => {
+  const state = INITIAL_STATE
+    .setIn(['character', 'initial', 'baseXp'], '50%')
+    .setIn(['character', 'initial', 'classXp'], '50%');
+
+  const character = calculatorReducer(state, { type: CALCULATE })
+    .get('character');
+
+  t.is(character.get('baseXp'), Math.floor(baseXpData[1] * 50 / 100));
+  t.is(character.get('classXp'), Math.floor(classXpData[0][1] * 50 / 100));
+});
