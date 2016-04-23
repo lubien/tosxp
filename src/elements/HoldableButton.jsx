@@ -32,6 +32,8 @@ class HoldableButton extends Component {
   render() {
     return (
       <IconButton
+        tooltip={<span>Holdable</span>}
+        tooltipPosition={'top-center'}
         onMouseDown={this.onMouseDown}
         onMouseUp={this.onMouseUp}
         onMouseLeave={this.onMouseUp}
