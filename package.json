@@ -1,6 +1,6 @@
 {
   "name": "tosxp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Tree of Savior XP calculator",
   "main": "index.js",
   "scripts": {
