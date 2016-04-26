@@ -29,7 +29,9 @@
 
       ga('create', 'UA-61736723-12', 'auto');
       ga('send', 'pageview');
-
+      setTimeout(function() {
+        ga(['_trackEvent', 'Control', 'Bounce Rate', '']);
+      }, 30000);
     </script>
   </body>
 </html>
